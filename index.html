@@ -3,10 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <!--Custom CSS-->
     <link rel="stylesheet" href="./styles.css" />
     <title>Form Animation</title>
   </head>
   <body>
+    <!--THE FORM-->
+    <form action="submit.js">
+      <!--NAME INPUT CONTAINER-->
+      <div class="field-name">
+        <!--USER ICON-->
+        <i class="fas fa-user"></i>
+        <!--INPUT FIELD-->
+        <input type="text" placeholder="Username" required />
+        <!--ARROW ICON-->
+        <i class="fas fa-arrow-down"></i>
+      </div>
+      <!--EMAIL INPUT CONTAINER-->
+      <div class="field-email inactive">
+        <!--EMAIL ICON-->
+        <i class="fas fa-envelope"></i>
+        <!--INPUT FIELD-->
+        <input type="email" placeholder="E-mail" required />
+        <!--ARROW ICON-->
+        <i class="fas fa-arrow-down"></i>
+      </div>
+
+      <!--PASSWORD INPUT CONTAINER-->
+      <div class="field-password inactive">
+        <!--PASSWORD ICON-->
+        <i class="fas fa-key"></i>
+        <!--INPUT FIELD-->
+        <input type="password" placeholder="Password" required />
+        <!--ARROW ICON-->
+        <i class="fas fa-arrow-down"></i>
+      </div>
+      <!--SUBMISSION MESSAGE-->
+      <div class="field-finish inactive">
+        <i class="fas fa-heart"></i>
+        <p>Thank you</p>
+        <i class="fas fa-heart"></i>
+      </div>
+    </form>
     <script src="./app.js"></script>
   </body>
 </html>
