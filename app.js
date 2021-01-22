@@ -1,5 +1,6 @@
 function animatedForm() {
   const arrows = document.querySelectorAll(".fa-arrow-down");
+  const warningMessage = document.getElementById("warning");
 
   arrows.forEach((arrow) => {
     arrow.addEventListener("click", () => {
@@ -9,12 +10,24 @@ function animatedForm() {
 
       if (input.type == "text" && validateUser(input)) {
         nextSlide(parent, nextForm);
+        warningMessage.textContent = "";
       } else if (input.type === "email" && validateEmail(input)) {
         nextSlide(parent, nextForm);
+        warningMessage.textContent = "";
       } else if (input.type === "password" && validateUser(input)) {
         nextSlide(parent, nextForm);
+        warningMessage.textContent = "";
       } else {
         parent.style.animation = "shake 0.5s ease";
+        if (parent.classList[0] === "field-name") {
+          warningMessage.textContent =
+            "Username must be atleast 6 characters long.";
+        } else if (parent.classList[0] === "field-email") {
+          warningMessage.textContent = "Please provide a valid email.";
+        } else if (parent.classList[0] === "field-password") {
+          warningMessage.textContent =
+            "Password must be atleast 6 characters long.";
+        }
       }
       //get rid of animation
       parent.addEventListener("animationend", () => {
@@ -26,7 +39,6 @@ function animatedForm() {
 
 function validateUser(user) {
   if (user.value.length < 6) {
-    console.log("Not enough characters.");
     error("rgb(189,87,87");
   } else {
     error("lightsalmon");
